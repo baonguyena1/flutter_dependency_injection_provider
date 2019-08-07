@@ -1,10 +1,14 @@
+import 'package:dependency_injection_provider/locator.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:dependency_injection_provider/router.dart';
 import 'package:dependency_injection_provider/utilities/constants/route_path.dart';
 import 'provider_setup.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  setupLocator();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

@@ -1,11 +1,12 @@
+import 'package:dependency_injection_provider/utilities/enums/viewstate.dart';
 import 'package:flutter/foundation.dart';
 
 class BaseModel extends ChangeNotifier {
-  bool _busy = false;
-  bool get busy => _busy;
+  ViewState _state = ViewState.Idle;
+  ViewState get state => _state;
 
-  void setBusy(bool value) {
-    _busy = value;
+  void setState(ViewState state) {
+    _state = state;
     notifyListeners();
   }
 }

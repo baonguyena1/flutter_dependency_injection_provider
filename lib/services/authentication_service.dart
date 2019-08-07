@@ -1,13 +1,11 @@
 import 'dart:async';
 
+import 'package:dependency_injection_provider/locator.dart';
 import 'package:dependency_injection_provider/models/user.dart';
 import 'package:dependency_injection_provider/services/api.dart';
 
 class AuthenticationService {
-  AuthenticationService({Api api})
-    : this._api = api;
-
-  final Api _api;
+Api _api = locator<Api>();
 
   StreamController<User> _userController = StreamController<User>();
 
