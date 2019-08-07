@@ -1,13 +1,35 @@
+import 'package:dependency_injection_provider/models/user.dart';
+import 'package:dependency_injection_provider/shared/app_colors.dart';
+import 'package:dependency_injection_provider/shared/text_styles.dart';
+import 'package:dependency_injection_provider/shared/ui_helpers.dart';
+import 'package:dependency_injection_provider/ui/widgets/post.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class Home extends StatelessWidget {
+class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
-      ),
-      body: Container(),
+      backgroundColor: backgroundColor,
+      body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            UIHelper.verticalSpaceLarge,
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0),
+              child: Text(
+                'Welcome ${Provider.of<User>(context).name}',
+                style: headerStyle,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0),
+              child: Text('Here are all your posts', style: subHeaderStyle),
+            ),
+            UIHelper.verticalSpaceSmall,
+            Expanded(child: Posts()),
+          ],
+        ),
     );
   }
 }
