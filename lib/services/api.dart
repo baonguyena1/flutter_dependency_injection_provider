@@ -4,21 +4,6 @@ import 'package:dependency_injection_provider/models/user.dart';
 import 'package:dependency_injection_provider/models/post.dart';
 import 'package:http/http.dart' as http;
 
-// class Parser {
-//   T decode<T extends DecodeJson>(T object,String body) {
-//     final data = json.decode(body);
-//     T result = object
-//                 ..fromJson(data);
-//     return result;
-//   }
-
-//   List<T> decodeArray<T extends DecodeJson>(T object,String body) {
-//     final data = json.decode(body) as List<dynamic>;
-//     List<T> result = data.map((json) => object.fromJson(json)).toList();
-//     return result;
-//   }
-// }
-
 class Api {
   static const endpoint = 'https://jsonplaceholder.typicode.com';
 
