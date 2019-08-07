@@ -5,7 +5,7 @@ import 'package:dependency_injection_provider/models/user.dart';
 import 'package:dependency_injection_provider/services/api.dart';
 
 class AuthenticationService {
-Api _api = locator<Api>();
+  Api _api = locator<Api>();
 
   StreamController<User> _userController = StreamController<User>();
 
